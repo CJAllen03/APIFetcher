@@ -109,8 +109,9 @@ Endpoints used:
 
 -  /currency/{currency}
 
-## :chart_with_upwards_trend: Possible Future Improvements 
+## 📈: Possible Future Improvements 
 -    Autocorrect for the country and category input. Could use the "from difflib import get_close_matches" library reference in Python
 -    A sorting algorithm to sot information by population or in some Alphabetical order
 -    Exporting the results to some Json file for better viewing
 -    A graphical User Interface for improved readability and further its ease of use. (Maybe translate from Python to js and html for desired specifics)
+-    Implement the features to be functionable across languages other than just English
