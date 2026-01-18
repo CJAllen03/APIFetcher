@@ -11,6 +11,12 @@ def searchCountry(name):
     response = requests.get(mod_Url)
     #print(response) checking for valid response
 
+    while not response:
+            print("Invalid entry")
+            name = input("Enter Country Name: ").lower()
+            mod_Url = f"{search_url}{name}"
+            response = requests.get(mod_Url)
+
     if response.status_code == 200:
         country_Data = response.json() #converts data to python dictionary
         #return country_Data
@@ -40,6 +46,13 @@ def filterBy(category):
         category_id = input("Enter the desired region: ").lower()
         mod_Url = f"{category_url}{category}/{category_id}"
         response = requests.get(mod_Url)
+
+        while not response:
+            print("Invalid entry")
+            category_id = input("Enter the desired region: ").lower()
+            mod_Url = f"{category_url}{category}/{category_id}"
+            response = requests.get(mod_Url)
+
         #print(response) 
 
         if response.status_code == 200:
@@ -67,6 +80,13 @@ def filterBy(category):
         category_id = input("Enter the desired subregion: ").lower()
         mod_Url = f"{category_url}{category}/{category_id}"
         response = requests.get(mod_Url)
+
+        while not response:
+            print("Invalid entry")
+            category_id = input("Enter the desired subregion: ").lower()
+            mod_Url = f"{category_url}{category}/{category_id}"
+            response = requests.get(mod_Url)
+
         #print(response) 
 
         if response.status_code == 200:
@@ -95,6 +115,13 @@ def filterBy(category):
         category_id = input("Enter the desired language: ").lower()
         mod_Url = f"{category_url}{category}/{category_id}"
         response = requests.get(mod_Url)
+
+        while not response:
+            print("Invalid entry")
+            category_id = input("Enter the desired language: ").lower()
+            mod_Url = f"{category_url}{category}/{category_id}"
+            response = requests.get(mod_Url)
+            
         #print(response) 
 
         if response.status_code == 200:
@@ -122,6 +149,13 @@ def filterBy(category):
         category_id = input("Enter the desired currency: ").lower()
         mod_Url = f"{category_url}{category}/{category_id}"
         response = requests.get(mod_Url)
+
+        while not response:
+            print("Invalid entry")
+            category_id = input("Enter the desired currency: ").lower()
+            mod_Url = f"{category_url}{category}/{category_id}"
+            response = requests.get(mod_Url)
+
         #print(response) 
 
         if response.status_code == 200:
@@ -147,7 +181,7 @@ def filterBy(category):
             print("\n")
     else:
         print("Not a Valid Category!\n")
-        exit
+        exit()
 
 while True:
     apiFeature = input("\nHow would you like to do access the Country data: Through Search or Filter? (Type 'exit' to quit)\n").lower()
@@ -163,12 +197,12 @@ while True:
             if clarify_in in ("exit", "quit", "cancel"):
                 continue
             if clarify_in == "no":
-                exit
+                exit()
             elif clarify_in in ("us outlying islands","united states minor outlying islands","united states outlying islands"):
                 searchCountry("united states minor outlying islands")
             else:
                 print("Invalid entry for the posed question.")
-                exit
+                exit()
         else:
             searchCountry(country_Name)
     elif apiFeature.lower() == "filter":
@@ -195,12 +229,12 @@ while True:
                 if clarify_in2 in ("exit", "quit", "cancel"):
                     continue
                 if clarify_in2 == "no":
-                    exit
+                    exit()
                 elif clarify_in2 in ("us outlying islands","united states minor outlying islands","united states outlying islands"):
                     searchCountry("united states minor outlying islands")
                 else:
                     print("Invalid entry for the posed question.")
-                    exit
+                    exit()
             else:
                 searchCountry(country_Name2)
         elif apiFeature2.lower() == "filter":
@@ -211,4 +245,4 @@ while True:
         else:
             print("Invalid Access Path")
     else:
-        exit
+        exit()
