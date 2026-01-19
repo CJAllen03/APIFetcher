@@ -219,7 +219,7 @@ while True:
             print("Goodbye!")
             continue
     if secondStep.lower() == "yes":
-        apiFeature2 = input("How would you like to do access the second set of data: Through Search or Filter?\n")
+        apiFeature2 = input("How would you like to do access the additional set of data: Through Search or Filter?\n")
         if apiFeature2.lower() == "search":
             country_Name2 = input("Enter Country Name: ").lower()
             if country_Name2 in ("exit", "quit"):
@@ -246,3 +246,4 @@ while True:
             print("Invalid Access Path")
     else:
         exit()
+
