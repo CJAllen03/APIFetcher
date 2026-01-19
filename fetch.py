@@ -244,6 +244,7 @@ while True:
             filterBy(prefCategory2)
         else:
             print("Invalid Access Path")
-    else:
+    elif secondStep.lower() == "no":
         exit()
-
+    else:
+        print("Invalid Input. Try again")
